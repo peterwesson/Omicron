@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C3610CC6-18F1-4325-8FEE-F6B269BBD911}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Omicron</RootNamespace>
+    <AssemblyName>Omicron</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Analysis\BaseAnalyser.cs" />
+    <Compile Include="Analysis\SyntaxAnalysis\ParserStateExporter.cs" />
+    <Compile Include="Analysis\SyntaxAnalysis\SyntaxAction.cs" />
+    <Compile Include="Analysis\SyntaxAnalysis\SyntaxStacks\ParseAction.cs" />
+    <Compile Include="Analysis\SyntaxAnalysis\SyntaxStacks\ParseActionType.cs" />
+    <Compile Include="Analysis\SyntaxAnalysis\SyntaxStacks\ParserState.cs" />
+    <Compile Include="Analysis\SyntaxAnalysis\SyntaxStacks\SyntaxStack.cs" />
+    <Compile Include="Analysis\SyntaxAnalysis\SyntaxStacks\SyntaxStackItem.cs" />
+    <Compile Include="Analysis\SemanticAnalysis\SemanticAnalyser.cs" />
+    <Compile Include="Compiler.cs" />
+    <Compile Include="Exceptions\CompilationException.cs" />
+    <Compile Include="Analysis\IAnalyser.cs" />
+    <Compile Include="Analysis\LexicalAnalysis\LexicalAnalyser.cs" />
+    <Compile Include="Lanuage\Grammar\ItemSet.cs" />
+    <Compile Include="Lanuage\Grammar\Item.cs" />
+    <Compile Include="Lanuage\Grammar\ParseTableFactory.cs" />
+    <Compile Include="Lanuage\Grammar\Reduction.cs" />
+    <Compile Include="Lanuage\Grammar\Symbol.cs" />
+    <Compile Include="Lanuage\Grammar\Rule.cs" />
+    <Compile Include="Lanuage\Grammar\Rules.cs" />
+    <Compile Include="Lanuage\Grammar\SymbolType.cs" />
+    <Compile Include="Lanuage\Grammar\Transition.cs" />
+    <Compile Include="Lanuage\Operators\OperatorAttribute.cs" />
+    <Compile Include="Lanuage\Operators\Operator.cs" />
+    <Compile Include="Lanuage\Operators\OperatorType.cs" />
+    <Compile Include="Lanuage\Syntax.cs" />
+    <Compile Include="Analysis\LexicalAnalysis\Tokens\Token.cs" />
+    <Compile Include="Analysis\LexicalAnalysis\Tokens\TokenType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Analysis\SyntaxAnalysis\SyntaxAnalyser.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
